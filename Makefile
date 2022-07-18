@@ -1,5 +1,3 @@
-#!/bin/bash
-
 SHELL := /bin/bash
 
 run:
@@ -39,17 +37,17 @@ kind-load:
 	kind load docker-image service-amd64:$(VERSION) --name $(KIND_CLUSTER)
 
 kind-apply:
-	cat zarf/k8s/base/service-pod/base-service.yaml | kubectl apply -f -
+	kustomize build zarf/k8s/kind/service-pod | kubectl apply -f -
 
 kind-delete:
-	cat zarf/k8s/base/service-pod/base-service.yaml | kubectl delete -f -
+	kustomize build zarf/k8s/kind/service-pod | kubectl delete -f -
 
 kind-status:
 	kubectl get nodes -o wide
 	kubectl get svc -o wide
 	kubectl get pods -o wide --watch --all-namespaces
 
-kind-status:
+kind-service-pod-status:
 	kubectl get pods -o wide --watch 
 
 kind-logs:
@@ -64,3 +62,26 @@ kind-restart:
 	kubectl rollout restart deployment service-pod 
 
 kind-update: all kind-load kind-restart
+
+kind-update-apply: all kind-load kind-apply
+
+tidy:
+	go mod tidy
+
+.PHONY: \
+	tidy \
+	run \
+	all \ 
+	service \
+	kind-up \
+	kind-down \
+	kind-load \
+	kind-apply \
+	kind-delete \
+	kind-status \
+	kind-status \
+	kind-logs \
+	kind-describe \
+	kind-restart \
+	kind-update \
+	kind-update-apply \

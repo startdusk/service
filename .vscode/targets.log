@@ -1,0 +1,351 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+Makefile:53: warning: overriding recipe for target 'kind-status'
+Makefile:48: warning: ignoring old recipe for target 'kind-status'
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Jul 18 20:22:31 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
+# default
+.SHELLFLAGS := -c
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/benjamin-linux/project/github/service
+# makefile (from 'Makefile', line 3)
+SHELL := /bin/bash
+# environment
+GOPROXY = https://goproxy.cn
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /mnt/c/Users/benjamin/AppData/Local/Programs/Microsoft VS Code/bin/code
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+GO111MODULE = on
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# makefile (from 'Makefile', line 11)
+VERSION := 1.0
+# environment
+COS_SEC_ID = AKIDXu1sSmpc8NL2SbU6RUHn20h7AwRfcHfm
+# environment
+VSCODE_CWD = /mnt/c/Users/benjamin/AppData/Local/Programs/Microsoft VS Code
+# environment
+COS_ADDR = https://notion-1305000400.cos.ap-guangzhou.myqcloud.com
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/benjamin-linux/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/bin/remote-cli:/home/benjamin-linux/.wasmtime/bin:/home/benjamin-linux/.volta/bin:/home/benjamin-linux/protoc-3.15.6-linux-x86_64/bin:/usr/local/node/bin:/bin:/usr/bin:/usr/local/bin:/home/benjamin-linux/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/MinGW/bin/:/mnt/c/Program Files/apache-maven-3.6.2/bin:/mnt/c/Program Files/Java/jdk1.8.0_221/bin:/mnt/c/Program Files/natapp/:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Program Files/cloc/:/mnt/c/Program Files (x86)/Common Files/Thunder Network/KanKan/Codecs:/mnt/c/Program Files/LLVM/bin:/mnt/c/Users/benjamin/protoc-3.14.0-win64/bin:/mnt/c/Program Files/Git/usr/bin:/mnt/c/Program Files/Git/mingw64/bin:/mnt/c/Users/benjamin/kubectl:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/benjamin/scoop/shims:/mnt/c/Users/benjamin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/benjamin/go/bin:/mnt/c/Users/benjamin/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/benjamin/.dotnet/tools:/mnt/c/Users/benjamin/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/benjamin/.dotnet/tools:/mnt/c/Users/benjamin/go/bin:/home/benjamin-linux/go/bin:/usr/local/go/bin:/home/benjamin-linux/.dotnet/tools
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+GOPATH = /home/benjamin-linux/go
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4980cd55-f7d6-4905-aecb-6ebbe0f5f7c9.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
+%F = $(notdir $%)
+# environment
+COS_SEC_KEY = rRjlVyA5j6C1Zrsc5IEtHOEn56qJVP3P
+# environment
+PWD = /home/benjamin-linux/project/github/service
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/37955_interop
+# environment
+WT_SESSION = 2519f24f-c1db-4823-80f7-0d1bc54f422c
+# environment
+GOMODCACHE = /home/benjamin-linux/go/pkg/mod
+# environment
+HOME = /home/benjamin-linux
+# environment
+LOGNAME = benjamin-linux
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+WASMTIME_HOME = /home/benjamin-linux/.wasmtime
+# environment
+ZSH = /home/benjamin-linux/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# environment
+VOLTA_HOME = /home/benjamin-linux/.volta
+# environment
+NODE_HOME = /usr/local/node
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = benjamin-linux
+# makefile
+.DEFAULT_GOAL := run
+# environment
+NAME = Code
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/benjamin/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/c/Users/benjamin/AppData/Local/Programs/Microsoft VS Code
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 26)
+KIND_CLUSTER := service-starter-cluster
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# environment
+WT_PROFILE_ID = {07b52e3e-de2c-5db4-bd2d-ba144ed6c273}
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+WSL_DISTRO_NAME = Ubuntu-20.04
+# variable set hash-table stats:
+# Load=79/1024=8%, Rehash=0, Collisions=6/110=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2064, inode 1037874): 13 files, no impossibilities.
+
+# 13 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+kind-logs:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 56):
+	kubectl logs -l app=service --all-containers=true -f --tail=100 
+
+kind-restart:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 64):
+	kubectl rollout restart deployment service-pod 
+
+kind-load:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 39):
+	kind load docker-image service-amd64:$(VERSION) --name $(KIND_CLUSTER)
+
+all: service
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+
+service:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := service
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  recipe to execute (from 'Makefile', line 16):
+	docker build \
+		-f zarf/docker/dockerfile \
+		-t service-amd64:$(VERSION) \
+		--build-arg BUILD_REF=$(VERSION) \
+		--build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+		.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-17 22:45:48.240065
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+kind-apply:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+	cat zarf/k8s/base/service-pod/base-service.yaml | kubectl apply -f -
+
+run:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 6):
+	go run main.go
+
+kind-describe:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 59):
+	kubectl describe nodes
+	kubectl describe svc
+	kubectl describe pod -l app=service 
+
+kind-delete:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 45):
+	cat zarf/k8s/base/service-pod/base-service.yaml | kubectl delete -f -
+
+kind-status:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 53):
+	kubectl get pods -o wide --watch 
+
+kind-up:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 29):
+	kind create cluster \
+		--image kindest/node:v1.24.0@sha256:0866296e693efe1fed79d5e6c7af8df71fc73ae45e3679af05342239cdc5bc8e \
+		--name $(KIND_CLUSTER) \
+		--config zarf/k8s/kind/kind-config.yaml
+	kubectl config set-context --current --namespace=service-system
+
+kind-down:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+	kind delete cluster --name $(KIND_CLUSTER)
+
+kind-update: all kind-load kind-restart
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=16/1024=2%, Rehash=0, Collisions=0/34=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 30 / storage = 276 B / avg = 9 B
+# current buf: size = 8162 B / used = 276 B / count = 30 / avg = 9 B
+
+# strcache performance: lookups = 55 / hit rate = 45%
+# hash-table stats:
+# Load=30/8192=0%, Rehash=0, Collisions=1/55=2%
+# Finished Make data base on Mon Jul 18 20:22:31 2022
+
+ 
