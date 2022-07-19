@@ -8,12 +8,12 @@ run:
 
 VERSION := 1.0
 
-all: service
+all: sales-api
 
-service:
+sales-api:
 	docker build \
-		-f zarf/docker/Dockerfile \
-		-t service-amd64:$(VERSION) \
+		-f zarf/docker/dockerfile.sales-api \
+		-t sales-api-amd64:$(VERSION) \
 		--build-arg BUILD_REF=$(VERSION) \
 		--build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 		.
@@ -28,38 +28,40 @@ kind-up:
 		--image kindest/node:v1.24.0@sha256:0866296e693efe1fed79d5e6c7af8df71fc73ae45e3679af05342239cdc5bc8e \
 		--name $(KIND_CLUSTER) \
 		--config zarf/k8s/kind/kind-config.yaml
-	kubectl config set-context --current --namespace=service-system
+	kubectl config set-context --current --namespace=sales-system
 
 kind-down:
 	kind delete cluster --name $(KIND_CLUSTER)
 
 kind-load:
-	kind load docker-image service-amd64:$(VERSION) --name $(KIND_CLUSTER)
+	# Set the image version
+	cd zarf/k8s/kind/sales-pod; kustomize edit set image sales-api-image=sales-api-amd64:$(VERSION)
+	kind load docker-image sales-api-amd64:$(VERSION) --name $(KIND_CLUSTER)
 
 kind-apply:
-	kustomize build zarf/k8s/kind/service-pod | kubectl apply -f -
+	kustomize build zarf/k8s/kind/sales-pod | kubectl apply -f -
 
 kind-delete:
-	kustomize build zarf/k8s/kind/service-pod | kubectl delete -f -
+	kustomize build zarf/k8s/kind/sales-pod | kubectl delete -f -
 
 kind-status:
 	kubectl get nodes -o wide
 	kubectl get svc -o wide
 	kubectl get pods -o wide --watch --all-namespaces
 
-kind-service-pod-status:
+kind-sales-pod-status:
 	kubectl get pods -o wide --watch 
 
 kind-logs:
-	kubectl logs -l app=service --all-containers=true -f --tail=100 
+	kubectl logs -l app=sales --all-containers=true -f --tail=100 
 
 kind-describe:
 	kubectl describe nodes
 	kubectl describe svc
-	kubectl describe pod -l app=service 
+	kubectl describe pod -l app=sales 
 
 kind-restart:
-	kubectl rollout restart deployment service-pod 
+	kubectl rollout restart deployment sales-pod 
 
 kind-update: all kind-load kind-restart
 
@@ -72,7 +74,7 @@ tidy:
 	tidy \
 	run \
 	all \ 
-	service \
+	sales-api \
 	kind-up \
 	kind-down \
 	kind-load \
@@ -85,3 +87,4 @@ tidy:
 	kind-restart \
 	kind-update \
 	kind-update-apply \
+	kind-sales-pod-status \
