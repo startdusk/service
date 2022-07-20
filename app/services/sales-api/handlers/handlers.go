@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/startdusk/service/app/services/sales-api/handlers/debug/checkgrp"
-	"github.com/startdusk/service/app/services/sales-api/handlers/v1/testgrp"
+	v1 "github.com/startdusk/service/app/services/sales-api/handlers/v1"
 	"github.com/startdusk/service/foundation/web"
 	"go.uber.org/zap"
 )
@@ -23,10 +23,10 @@ type APIMuxConfig struct {
 func APIMux(cfg APIMuxConfig) *web.App {
 	app := web.NewApp(cfg.Shutdown)
 
-	tgh := testgrp.Handlers{
+	// Load the v1 routes.
+	v1.Routes(app, v1.Config{
 		Log: cfg.Log,
-	}
-	app.Handle(http.MethodGet, "/v1/test", tgh.Test)
+	})
 
 	return app
 }
