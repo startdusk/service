@@ -7,7 +7,9 @@ import (
 )
 
 // Respond converts a Go value to JSON and sends it to the client.
-func Respond(_ context.Context, w http.ResponseWriter, data any, statusCode int) error {
+func Respond(ctx context.Context, w http.ResponseWriter, data any, statusCode int) error {
+	// Set the status for the request logger middleware.
+	SetStatusCode(ctx, statusCode)
 
 	// If there is nothing to marshal then set status code and return.
 	if statusCode == http.StatusNoContent {

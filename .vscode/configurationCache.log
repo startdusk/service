@@ -1,1 +1,1 @@
-{"buildTargets":[],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all","kind-apply","kind-delete","kind-describe","kind-down","kind-load","kind-logs","kind-restart","kind-status","kind-status-sales","kind-up","kind-update","kind-update-apply","run","sales-api","tidy"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
