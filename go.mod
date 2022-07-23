@@ -4,6 +4,7 @@ go 1.18
 
 require (
 	github.com/ardanlabs/conf/v3 v3.1.2
+	github.com/ardanlabs/darwin v1.3.0
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/google/uuid v1.3.0
 	github.com/jmoiron/sqlx v1.3.5
