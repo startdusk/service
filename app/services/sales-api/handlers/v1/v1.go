@@ -5,6 +5,7 @@ package v1
 import (
 	"net/http"
 
+	"github.com/jmoiron/sqlx"
 	"github.com/startdusk/service/app/services/sales-api/handlers/v1/testgrp"
 	"github.com/startdusk/service/business/web/auth"
 	"github.com/startdusk/service/business/web/v1/mid"
@@ -16,6 +17,7 @@ import (
 type Config struct {
 	Log  *zap.SugaredLogger
 	Auth *auth.Auth
+	DB   *sqlx.DB
 }
 
 // Routes binds all the version 1 routes.
