@@ -9,6 +9,7 @@ import (
 
 	"github.com/startdusk/service/app/services/sales-api/handlers/debug/checkgrp"
 	v1 "github.com/startdusk/service/app/services/sales-api/handlers/v1"
+	"github.com/startdusk/service/business/web/auth"
 	"github.com/startdusk/service/business/web/v1/mid"
 	"github.com/startdusk/service/foundation/web"
 	"go.uber.org/zap"
@@ -18,12 +19,13 @@ import (
 type APIMuxConfig struct {
 	Shutdown chan os.Signal
 	Log      *zap.SugaredLogger
+	Auth     *auth.Auth
 }
 
 // APIMux constructs a http.Handler with all application routes defined.
 func APIMux(cfg APIMuxConfig) *web.App {
 	app := web.NewApp(cfg.Shutdown,
-		mid.Logger(cfg.Log), 
+		mid.Logger(cfg.Log),
 		mid.Errors(cfg.Log),
 		mid.Metrics(),
 		mid.Panics(),
@@ -31,7 +33,8 @@ func APIMux(cfg APIMuxConfig) *web.App {
 
 	// Load the v1 routes.
 	v1.Routes(app, v1.Config{
-		Log: cfg.Log,
+		Log:  cfg.Log,
+		Auth: cfg.Auth,
 	})
 
 	return app
