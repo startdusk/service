@@ -25,6 +25,10 @@ SHELL := /bin/bash
 # curl -il -H "Authorization: Bearer ${TOKEN}" http://localhost:3000/v1/testauth
 # 
 
+# Database client
+# dblab --host localhost --user postgres --db postgres --pass postgres --ssl disable --port 5432 --driver postgres --limit 50
+
+
 # ==============================================================================
 
 run:
