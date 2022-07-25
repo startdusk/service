@@ -44,5 +44,6 @@ func GetFieldErrors(err error) FieldErrors {
 	if !errors.As(err, &fe) {
 		return nil
 	}
+
 	return fe
 }

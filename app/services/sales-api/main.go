@@ -17,9 +17,9 @@ import (
 	"github.com/startdusk/service/business/sys/database"
 	"github.com/startdusk/service/business/web/auth"
 	"github.com/startdusk/service/foundation/keystore"
+	"github.com/startdusk/service/foundation/logger"
 	"go.uber.org/automaxprocs/maxprocs"
 	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 )
 
 /*
@@ -30,7 +30,7 @@ var build = "develop"
 
 func main() {
 	// Construct the application loger.
-	log, err := initLog("SALES-API")
+	log, err := logger.New("SALES-API")
 	if err != nil {
 		fmt.Println("Error constructing looger:", err)
 		os.Exit(1)
@@ -232,20 +232,4 @@ func run(log *zap.SugaredLogger) error {
 	}
 
 	return nil
-}
-
-func initLog(service string) (*zap.SugaredLogger, error) {
-	config := zap.NewProductionConfig()
-	config.OutputPaths = []string{"stdout"}
-	config.EncoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
-	config.DisableStacktrace = true
-	config.InitialFields = map[string]any{
-		"service": service,
-	}
-
-	log, err := config.Build()
-	if err != nil {
-		return nil, err
-	}
-	return log.Sugar(), nil
 }
