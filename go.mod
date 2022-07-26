@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/ardanlabs/conf/v3 v3.1.2
 	github.com/ardanlabs/darwin v1.3.0
-	github.com/dimfeld/httptreemux v5.0.1+incompatible
+	github.com/dimfeld/httptreemux/v5 v5.4.0
 	github.com/go-playground/locales v0.14.0
 	github.com/go-playground/universal-translator v0.18.0
 	github.com/go-playground/validator/v10 v10.11.0
